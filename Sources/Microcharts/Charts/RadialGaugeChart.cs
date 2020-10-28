@@ -33,6 +33,13 @@ namespace Microcharts
         /// </summary>
         /// <value>The start angle.</value>
         public float StartAngle { get; set; } = -90;
+        
+
+        /// <summary>
+        /// Gets or sets if the legend is all right
+        /// </summary>
+        /// <value>The placement of the legend.</value>
+        public bool ForceLegendRight { get; set; } = false;
 
         private float AbsoluteMinimum => Entries?.Select(x => x.Value).Concat(new[] { MaxValue, MinValue, InternalMinValue ?? 0 }).Min(x => Math.Abs(x)) ?? 0;
 
@@ -103,13 +110,17 @@ namespace Microcharts
 
         private void DrawCaption(SKCanvas canvas, int width, int height)
         {
-            var rightValues = Entries.Take(Entries.Count() / 2).ToList();
-            var leftValues = Entries.Skip(rightValues.Count()).ToList();
+            if (ForceLegendRight) {
+                DrawCaptionElements(canvas, width, height, Entries, false, false);
+            } else {            
+                var rightValues = Entries.Take(Entries.Count() / 2).ToList();
+                var leftValues = Entries.Skip(rightValues.Count()).ToList();
 
-            leftValues.Reverse();
+                leftValues.Reverse();
 
-            DrawCaptionElements(canvas, width, height, rightValues, false, false);
-            DrawCaptionElements(canvas, width, height, leftValues, true, false);
+                DrawCaptionElements(canvas, width, height, rightValues, false, false);
+                DrawCaptionElements(canvas, width, height, leftValues, true, false);
+            }
         }
 
         #endregion
