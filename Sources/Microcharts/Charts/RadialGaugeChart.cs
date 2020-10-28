@@ -1,4 +1,4 @@
-﻿// Copyright (c) Aloïs DENIEL. All rights reserved.
+// Copyright (c) Aloïs DENIEL. All rights reserved.
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
 using System;
@@ -111,7 +111,7 @@ namespace Microcharts
         private void DrawCaption(SKCanvas canvas, int width, int height)
         {
             if (ForceLegendRight) {
-                DrawCaptionElements(canvas, width, height, Entries, false, false);
+                DrawCaptionElements(canvas, width, height, Entries.ToList(), false, false);
             } else {            
                 var rightValues = Entries.Take(Entries.Count() / 2).ToList();
                 var leftValues = Entries.Skip(rightValues.Count()).ToList();
