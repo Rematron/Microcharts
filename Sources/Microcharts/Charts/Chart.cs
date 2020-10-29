@@ -333,8 +333,8 @@ namespace Microcharts
                 if (hasLabel || hasValueLabel)
                 {
                     var captionMargin = LabelTextSize * 0.60f;
-                    var captionX = isLeft ? Margin : width - Margin - LabelTextSize;
-                    var valueColor = entry.ValueLabelColor.WithAlpha((byte)(entry.ValueLabelColor.Alpha * AnimationProgress));
+                    var captionX = isLeft ? Margin : (Math.Min(width, height) - (2 * Margin));
+                    var valueColor = entry.Color.WithAlpha((byte)(entry.ValueLabelColor.Alpha * AnimationProgress));
                     var lblColor = entry.TextColor.WithAlpha((byte)(entry.TextColor.Alpha * AnimationProgress));
                     var rect = SKRect.Create(captionX, y, LabelTextSize, LabelTextSize);
 
@@ -344,19 +344,19 @@ namespace Microcharts
                         Color = valueColor
                     })
                     {
-                        canvas.DrawRect(rect, paint);
+                        canvas.DrawRoundRect(rect, new SKSize(LabelTextSize, LabelTextSize), paint);
                     }
 
-                    if (isLeft)
-                    {
+                    //if (isLeft)
+                    //{
                         captionX += LabelTextSize + captionMargin;
-                    }
-                    else
-                    {
-                        captionX -= captionMargin;
-                    }
+                    //}
+                    //else
+                    //{
+                    //    captionX -= captionMargin;
+                    //}
 
-                    canvas.DrawCaptionLabels(entry.Label, lblColor, entry.ValueLabel, valueColor, LabelTextSize, new SKPoint(captionX, y + (LabelTextSize / 2)), isLeft ? SKTextAlign.Left : SKTextAlign.Right, Typeface, out var labelBounds);
+                    canvas.DrawCaptionLabels(entry.Label, lblColor, entry.ValueLabel, valueColor, LabelTextSize, new SKPoint(captionX, y + (LabelTextSize / 2)),  SKTextAlign.Left , Typeface, out var labelBounds);
                     labelBounds.Union(rect);
 
                     if (DrawDebugRectangles)

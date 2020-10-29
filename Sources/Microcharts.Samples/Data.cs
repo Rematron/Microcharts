@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using SkiaSharp;
 
 namespace Microcharts.Samples
@@ -182,18 +182,18 @@ namespace Microcharts.Samples
                         ValueLabel = "100",
                         Color = SKColor.Parse("#90D585")
                 },
-                new ChartEntry(600)
-                {
-                    Label = "Week 4",
-                    ValueLabel = "600",
-                    Color = SKColor.Parse("#32a852")
-                },
-                new ChartEntry(600)
-                {
-                    Label = "Week 5",
-                    ValueLabel = "1600",
-                    Color = SKColor.Parse("#8EC0D8")
-                }
+                //new ChartEntry(600)
+                //{
+                //    Label = "Week 4",
+                //    ValueLabel = "600",
+                //    Color = SKColor.Parse("#32a852")
+                //},
+                //new ChartEntry(600)
+                //{
+                //    Label = "Week 5",
+                //    ValueLabel = "1600",
+                //    Color = SKColor.Parse("#8EC0D8")
+                //}
             };
 
             return new Chart[]
@@ -227,7 +227,8 @@ namespace Microcharts.Samples
                 new RadialGaugeChart
                 {
                     Entries = entries,
-                    LabelTextSize = 60
+                    LabelTextSize = 60,
+                    ForceLegendRight = true,
                 },
                 new RadarChart
                 {
