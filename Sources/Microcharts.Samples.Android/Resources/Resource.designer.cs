@@ -25,7 +25,6 @@ namespace Microcharts.Samples.Android
 		
 		public static void UpdateIdValues()
 		{
-			global::Microcharts.Droid.Resource.String.library_name = global::Microcharts.Samples.Android.Resource.String.library_name;
 		}
 		
 		public partial class Animation

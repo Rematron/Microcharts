@@ -227,7 +227,7 @@ namespace Microcharts.Samples
                 new RadialGaugeChart
                 {
                     Entries = entries,
-                    LabelTextSize = 60,
+                    //LabelTextSize = 60,
                     ForceLegendRight = true,
                 },
                 new RadarChart

@@ -1,4 +1,4 @@
-﻿<Page
+<Page
     x:Class="Microcharts.Samples.Uwp.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -23,11 +23,11 @@
         </Grid.ColumnDefinitions>
          
         <microcharts:ChartView Grid.Row="0" x:Name="chart1" />
-        <microcharts:ChartView Grid.Row="1" x:Name="chart2" />
+        <!--<microcharts:ChartView Grid.Row="1" x:Name="chart2" />
         <microcharts:ChartView Grid.Row="2" x:Name="chart3" />
         <microcharts:ChartView Grid.Row="3" x:Name="chart4" />
 
         <microcharts:ChartView Grid.Row="0" Grid.Column="1" x:Name="chart5" />
-        <microcharts:ChartView Grid.Row="1" Grid.Column="1" x:Name="chart6" />
+        <microcharts:ChartView Grid.Row="1" Grid.Column="1" x:Name="chart6" />-->
     </Grid>
 </Page>

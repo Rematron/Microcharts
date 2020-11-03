@@ -18,6 +18,7 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <LangVersion>latest</LangVersion>
         <Company>BMD Systemhaus GmbH</Company>
+        <PackageId>BMD.Microcharts.Forms</PackageId>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
